@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Dashboard</title>
+  <link rel="stylesheet" href="fitness.css">
+</head>
+<body>
+
+  <!-- Floating button shown when sidebar is collapsed -->
+  <button class="open-btn" id="openBtn" onclick="toggleSidebar()">☰</button>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div>
+      <div class="logo">
+        FIT-REP
+        <button class="toggle-btn" onclick="toggleSidebar()">✕</button>
+      </div>
+      <nav class="menu">
+        <a href="#" class="active">Dashboard</a>
+        <a href="#">My Workouts</a>
+        <a href="#">Goals and Challenges</a>
+        <a href="#">Achievements</a>
+        <a href="#">Progress Tracker</a>
+        <a href="#">Community/Friends</a>
+        <a href="#">Trainer/Coaching</a>
+        <a href="#">Nutrition Plan</a>
+        <a href="#">Settings</a>
+        <a href="#">Logout</a>
+      </nav>
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <h1>My Fitness Dashboard</h1>
+      <div class="topbar-right">
+        <span class="date">Jun 17, 2024</span>
+        <div class="bell">🔔<span class="badge"></span></div>
+        <div class="profile">
+          <div class="profile-info"><h4>David Goggins</h4></div>
+          <div class="avatar">DG</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 1 -->
+    <div class="grid-top">
+
+      <!-- Today's Workouts -->
+      <div class="card">
+        <div class="card-title">Today's Workouts</div>
+        <div class="workout-item">
+          <div class="chk done">✓</div>
+          <span>Today Workout 1</span>
+          <div class="dot green"></div>
+        </div>
+        <div class="workout-item">
+          <div class="chk"></div>
+          <span>Monday Workout 2</span>
+          <div class="dot orange"></div>
+        </div>
+        <div class="workout-item">
+          <div class="chk"></div>
+          <span>Today's Workout 3</span>
+          <div class="dot orange"></div>
+        </div>
+        <div class="workout-item">
+          <div class="chk"></div>
+          <span>Today's Workout 4</span>
+          <div class="dot orange"></div>
+        </div>
+      </div>
+
+      <!-- Calories Burned -->
+      <div class="card">
+        <div class="card-title">Calories Burned <span class="card-icon">🔥</span></div>
+        <div class="calories-center">
+          <div class="ring-wrap">
+            <svg viewBox="0 0 100 100" width="110" height="110">
+              <defs>
+                <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#7631ec"/>
+                  <stop offset="100%" stop-color="#09037c"/>
+                </linearGradient>
+              </defs>
+              <circle class="ring-bg"  cx="50" cy="50" r="40"/>
+              <circle class="ring-val" cx="50" cy="50" r="40"/>
+            </svg>
+            <div class="ring-label">
+              <div class="ring-num">780</div>
+              <div class="ring-sub">1000 Kcal</div>
+            </div>
+          </div>
+          <div class="cal-note">78% of daily goal</div>
+        </div>
+        <div class="sparkline"></div>
+      </div>
+
+
+    <!-- ROW 2 -->
+    <div class="grid-mid">
+
+      <!-- Progress Tracker -->
+      <div class="card">
+        <div class="card-title">Progress Tracker</div>
+        <div class="chart-legend">
+          <span><span class="legend-dot blue"></span>Weight</span>
+          <span><span class="legend-dot purple"></span>Time</span>
+        </div>
+        <p class="chart-sub">Weight trend</p>
+        <div class="chart-area">
+          <svg viewBox="0 0 340 100" preserveAspectRatio="none" width="100%" height="100%">
+            <text class="axis-label" x="0" y="12">18.4</text>
+            <text class="axis-label" x="0" y="52">17.3</text>
+            <text class="axis-label" x="0" y="90">17.0</text>
+            <line x1="30" y1="8"  x2="340" y2="8"  stroke="#1a2a45" stroke-width="1"/>
+            <line x1="30" y1="48" x2="340" y2="48" stroke="#1a2a45" stroke-width="1"/>
+            <line x1="30" y1="88" x2="340" y2="88" stroke="#1a2a45" stroke-width="1"/>
+            <polyline fill="none" stroke="#8aa9d4" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"
+              points="34,10 78,30 118,42 158,38 198,55 238,65 278,72 318,78"/>
+            <circle cx="34"  cy="10" r="3" fill="#8aa9d4"/>
+            <circle cx="78"  cy="30" r="3" fill="#8aa9d4"/>
+            <circle cx="118" cy="42" r="3" fill="#8aa9d4"/>
+            <circle cx="158" cy="38" r="3" fill="#8aa9d4"/>
+            <circle cx="198" cy="55" r="3" fill="#8aa9d4"/>
+            <circle cx="238" cy="65" r="3" fill="#8aa9d4"/>
+            <circle cx="278" cy="72" r="3" fill="#8aa9d4"/>
+            <circle cx="318" cy="78" r="4" fill="#8aa9d4" stroke="#0d182e" stroke-width="2"/>
+            <text class="axis-label" x="30"  y="100">Jan</text>
+            <text class="axis-label" x="72"  y="100">Feb</text>
+            <text class="axis-label" x="112" y="100">Mar</text>
+            <text class="axis-label" x="152" y="100">Apr</text>
+            <text class="axis-label" x="192" y="100">May</text>
+            <text class="axis-label" x="232" y="100">Jun</text>
+            <text class="axis-label" x="272" y="100">Jul</text>
+            <text class="axis-label" x="308" y="100">Sep</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Goals & Challenges -->
+      <div class="card">
+        <div class="card-title">Goals & Challenges</div>
+        <div class="goal-row">
+          <span class="goal-name">Weight</span>
+          <span class="goal-val">67 kg</span>
+        </div>
+        <div class="goal-bar"><div class="goal-fill" style="width:60%;background:#09037c"></div></div>
+        <div class="goal-row">
+          <span class="goal-name">Body Fat %</span>
+          <span class="goal-val">22.9%</span>
+        </div>
+        <div class="goal-bar"><div class="goal-fill" style="width:45%;background:#f1f50b"></div></div>
+        <p class="section-label">Active Challenges</p>
+        <div class="goal-row">
+          <span class="goal-name">Goal Weight</span>
+          <span class="goal-val">70 kg</span>
+        </div>
+        <div class="goal-row">
+          <span class="goal-name">Current Weight</span>
+          <span class="goal-val">67 kg</span>
+        </div>
+        <div class="goal-bar"><div class="goal-fill" style="width:80%;background:#2f10b9"></div></div>
+      </div>
+
+    </div><!-- /grid-mid -->
+
+    <!-- ROW 3 -->
+    <div class="grid-bot">
+
+      <!-- Body Measurements -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title" style="margin-bottom:0">Body Measurements</div>
+          <span class="view-link">View all →</span>
+        </div>
+        <div class="challenge-card">
+          <div class="trophy">🏆</div>
+          <div class="ch-info">
+            <div class="ch-title">Active Challenge</div>
+            <div class="ch-sub">Active Challenge 29 Jan</div>
+          </div>
+          <div class="ch-stats">
+            <div class="ch-stat"><span>60.8</span>Weight</div>
+            <div class="ch-stat"><span>24.9%</span>Body Fat</div>
+          </div>
+        </div>
+        <div class="challenge-card">
+          <div class="trophy">🏆</div>
+          <div class="ch-info">
+            <div class="ch-title">Active Challenge</div>
+            <div class="ch-sub">Active Challenge 17 Jun</div>
+          </div>
+          <div class="ch-stats">
+             <div class="ch-stat"><span>67.5</span>Weight</div>
+            <div class="ch-stat"><span>16.7%</span>Body Fat</div>
+           
+          </div>
+        </div>
+      </div>
+
+      <!-- Sleep & Recovery -->
+      <div class="card">
+        <div class="card-title">Sleep & Recovery 😴</div>
+        <div class="sleep-center">
+          <div>
+            <div class="sleep-time">7h 30m</div>
+            <div class="sleep-lbl">sleep score</div>
+          </div>
+          <div class="sleep-ring">
+            <svg viewBox="0 0 64 64" width="80" height="80">
+              <circle class="sr-bg"  cx="32" cy="32" r="26"/>
+              <circle class="sr-val" cx="32" cy="32" r="26"/>
+            </svg>
+            <div class="sleep-badge">Good</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /grid-bot -->
+
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const openBtn = document.getElementById('openBtn');
+      sidebar.classList.toggle('collapsed');
+      openBtn.classList.toggle('visible');
+    }
+  </script>
+
+</body>
+</html>
